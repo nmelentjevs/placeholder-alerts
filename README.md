@@ -1,10 +1,10 @@
 # placeholder-alerts
 
 > Small package to add font-awesome icon alerts inside the placeholder to show incorrect input on form validation
-
-[![npm (scoped)](https://img.shields.io/badge/npm-v1.0.2-brightgreen.svg)](https://github.com/nmelentjevs/placeholder-alerts)
-![npm (scoped)](https://img.shields.io/badge/install_size-1.3Kb-green.svg)
-![npm (scoped)](https://img.shields.io/badge/build-passing-brightgreen.svg)
+> Need Font Awesome to be supplied for it to display correctly.
+> [![npm (scoped)](https://img.shields.io/badge/npm-v1.0.2-brightgreen.svg)](https://github.com/nmelentjevs/placeholder-alerts)
+> ![npm (scoped)](https://img.shields.io/badge/install_size-1.3Kb-green.svg)
+> ![npm (scoped)](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
 ## Install
 
@@ -39,7 +39,7 @@ Choose an input box where you would like to show side alert:
 </form>
 ```
 
-#### Javascript
+####Javascript
 
 ```js
 const email = document.getElementById('email');
@@ -48,9 +48,8 @@ createAlert(email);
 ```
 
 ##### Will display this:
-![Alert icon](https://i.ibb.co/prFtbD5/Screen-Shot-2019-06-10-at-20-23-06-pm.png)
 
-> Need Font Awesome to be supplied for it to display correctly.
+![Alert icon](https://i.ibb.co/prFtbD5/Screen-Shot-2019-06-10-at-20-23-06-pm.png)
 
 ```
 
@@ -66,6 +65,9 @@ createAlert(email);
 
         time             Int. Time in ms after which the alert icon will dissapear from the page.
                          Default: icons will stay on the page.
+
+        style            Object. CSS Object containing any styled to be applied to the icon.
+
 ```
 
 #### Javascript
@@ -96,3 +98,4 @@ createAlert(email, {
 [travis-url]: https://travis-ci.org/live-js/live-xxx
 [coveralls-image]: https://img.shields.io/coveralls/live-js/live-xxx/master.svg
 [coveralls-url]: https://coveralls.io/r/live-js/live-xxx?branch=master
+
