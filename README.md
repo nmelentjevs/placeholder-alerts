@@ -117,7 +117,6 @@ createAlert(email, {
         time: 2000
       });
     }
-    console.log('ok');
     return true;
   };
 };
@@ -157,7 +156,6 @@ createAlert(email, {
   <label id="error">
     <span> </span>
   </label>
-  <!-- Insert form here -->
   <div>
     <button id="send-button" type="submit">Send</button>
     <button id="reset-button" type="submit">Reset</button>
