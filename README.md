@@ -22,7 +22,7 @@ createAlert(target, options);
 
 Choose an input box where you would like to show side alert:
 
-####Html
+##Html
 
 ```html
 <h2>Example of input target</h2>
@@ -39,7 +39,7 @@ Choose an input box where you would like to show side alert:
 </form>
 ```
 
-####Javascript
+##Javascript
 
 ```js
 const email = document.getElementById('email');
@@ -47,7 +47,7 @@ const email = document.getElementById('email');
 createAlert(email);
 ```
 
-#####Will display this:
+##Will display this:
 ![Alert icon](https://i.ibb.co/prFtbD5/Screen-Shot-2019-06-10-at-20-23-06-pm.png)
 
 > Need Font Awesome to be supplied for it to display correctly.
@@ -68,7 +68,7 @@ createAlert(email);
                          Default: icons will stay on the page.
 ```
 
-####Javascript
+##Javascript
 
 ```js
 const email = document.getElementById('email');
@@ -82,7 +82,7 @@ createAlert(email, {
 });
 ```
 
-#####Will display this:
+###Will display this:
 
 ![alt text](https://media.giphy.com/media/JRt20Sr20J7CWDBIkP/giphy.gif)
 
