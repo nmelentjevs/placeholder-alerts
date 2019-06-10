@@ -33,7 +33,7 @@ Choose an input box where you would like to show side alert:
 </form>
 ```
 
-####Javascript
+#### Javascript
 
 ```js
 const email = document.getElementById('email');
