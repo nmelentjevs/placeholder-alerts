@@ -1,9 +1,9 @@
 # placeholder-alerts
 
 > Small package to add font-awesome icon alerts inside the placeholder to show incorrect input on form validation.
-> Need Font Awesome to be supplied for it to display correctly.
+> Needs Font Awesome to be supplied for it to display correctly.
 
-> [![npm (scoped)](https://img.shields.io/badge/npm-v1.0.2-brightgreen.svg)](https://github.com/nmelentjevs/placeholder-alerts) > ![npm (scoped)](https://img.shields.io/badge/install_size-1.3Kb-green.svg) > ![npm (scoped)](https://img.shields.io/badge/build-passing-brightgreen.svg)
+> [![npm (scoped)](https://img.shields.io/badge/npm-v1.0.2-brightgreen.svg)](https://github.com/nmelentjevs/placeholder-alerts) ![npm (scoped)](https://img.shields.io/badge/install_size-1.3Kb-green.svg) ![npm (scoped)](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
 ## Install
 
@@ -80,7 +80,94 @@ createAlert(email, {
 
 ##### Will display this:
 
-![alt text](https://media.giphy.com/media/JRt20Sr20J7CWDBIkP/giphy.gif)
+![Remove after delay](https://media.giphy.com/media/JRt20Sr20J7CWDBIkP/giphy.gif)
+
+## Form Validation Example
+
+#### Javascript
+
+```js
+  const validateInput = (emailInput, phoneInput, passwordInput) => {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (emailInput == '' && phoneInput == '' && passwordInput == '') {
+      createAlert([email, phone, password], {
+        iconClasses: 'fas fa-exclamation',
+        time: 1500,
+        style: {
+          color: 'red'
+        }
+      });
+      return 'Please fill all the fields';
+    }
+
+    if (re.test(String(emailInput).toLowerCase()) !== true) {
+      createAlert(email, { time: 2000 });
+      return 'Please enter a correct email';
+    }
+
+    if (passwordInput.length < 4) {
+      createAlert(password, {
+        time: 2000
+      });
+      return 'Your password must be at least 4 characters';
+    }
+
+    if (typeof phoneInput == 'string') {
+      createAlert(phone, {
+        time: 2000
+      });
+    }
+    console.log('ok');
+    return true;
+  };
+};
+```
+
+#### Html
+
+```html
+<form id="form">
+  <label>
+    Email
+    <input
+      id="email"
+      class="inputRequest formContentElement"
+      type="text"
+      placeholder="Your email address"
+    />
+  </label>
+  <label>
+    Phone number
+    <input
+      id="phone"
+      class="inputRequest formContentElement"
+      type="text"
+      placeholder="Your mobile number"
+    />
+  </label>
+  <label>
+    Password
+    <input
+      id="password"
+      class="inputRequest formContentElement alert"
+      type="password"
+      placeholder="At least 4 characters"
+    />
+  </label>
+  <label id="error">
+    <span> </span>
+  </label>
+  <!-- Insert form here -->
+  <div>
+    <button id="send-button" type="submit">Send</button>
+    <button id="reset-button" type="submit">Reset</button>
+  </div>
+</form>
+```
+
+##### If submitted without filling the fields validation will trigger alert on all inputs:
+
+![More complex example](https://media.giphy.com/media/IgjxZ0zXOancEUig0A/giphy.gif)
 
 ## License
 
@@ -92,5 +179,4 @@ createAlert(email, {
 [travis-url]: https://travis-ci.org/live-js/live-xxx
 [coveralls-image]: https://img.shields.io/coveralls/live-js/live-xxx/master.svg
 [coveralls-url]: https://coveralls.io/r/live-js/live-xxx?branch=master
-
 
