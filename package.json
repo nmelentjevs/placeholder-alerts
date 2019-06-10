@@ -1,0 +1,11 @@
+{
+  "name": "placeholder-alerts",
+  "version": "1.0.3",
+  "description": "Small script to add font awesome icons as alerts in placeholder on form validation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nikita Melentjevs",
+  "license": "ISC"
+}
