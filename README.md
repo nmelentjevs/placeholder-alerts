@@ -2,6 +2,7 @@
 
 > Small package to add font-awesome icon alerts inside the placeholder to show incorrect input on form validation
 > Need Font Awesome to be supplied for it to display correctly.
+
 > [![npm (scoped)](https://img.shields.io/badge/npm-v1.0.2-brightgreen.svg)](https://github.com/nmelentjevs/placeholder-alerts)
 > ![npm (scoped)](https://img.shields.io/badge/install_size-1.3Kb-green.svg)
 > ![npm (scoped)](https://img.shields.io/badge/build-passing-brightgreen.svg)
