@@ -22,6 +22,12 @@ import { createAlert } from '.placeholder-alerts';
 createAlert(target, options);
 ```
 
+```html
+<body>
+  ...
+  <script src="https://kit.fontawesome.com/Your Font Awesome Code"></script>
+</body>
+
 ## Usage
 
 Choose an input box where you would like to show side alert:
