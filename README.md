@@ -58,6 +58,8 @@ createAlert(email);
 
 ![Alert icon](https://i.ibb.co/prFtbD5/Screen-Shot-2019-06-10-at-20-23-06-pm.png)
 
+### Options
+
 ```
 
   Usage
