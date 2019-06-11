@@ -60,10 +60,12 @@ const createAlert = (elements, options) => {
     if (options.time) {
       setTimeout(() => {
         newIcon.remove();
+        label.style.position = '';
       }, options.time);
     }
   }
 };
 
 export { createAlert };
+
 
