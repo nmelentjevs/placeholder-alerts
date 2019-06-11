@@ -27,6 +27,7 @@ createAlert(target, options);
   ...
   <script src="https://kit.fontawesome.com/Your Font Awesome Code"></script>
 </body>
+```
 
 ## Usage
 
