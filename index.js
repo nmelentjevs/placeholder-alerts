@@ -1,9 +1,11 @@
-function createAlert(elements, options) {
+const createAlert = (elements, options) => {
   let elementsArray = [];
-
   options = options || {};
-  (options.iconClasses = options.iconClasses || 'fas fa-bell'),
-    (options.time = options.time || false);
+  options.iconClasses = options.iconClasses || 'fas fa-bell';
+  options.time = options.time || false;
+  options.display = options.display || 'absolute';
+  options.percent = options.percent || false;
+  options.style = options.style || { color: 'red', fontSize: '14px' };
 
   if (!elements.length) {
     elementsArray = new Array(elements);
@@ -21,23 +23,39 @@ function createAlert(elements, options) {
     const iconRectangle = newIcon.getBoundingClientRect();
 
     let percent = 0.9;
-    if (labelRectangle.width <= 200) {
-      percent = 0.85;
-    } else if (labelRectangle.width <= 300) {
-      percent = 0.9;
+    if (!options.percent) {
+      if (labelRectangle.width <= 200) {
+        percent = 0.85;
+      } else if (labelRectangle.width <= 300) {
+        percent = 0.9;
+      } else {
+        percent = 0.95;
+      }
     } else {
-      percent = 0.95;
+      percent = options.percent;
     }
 
-    newIcon.style.top = `${labelRectangle.top -
-      iconRectangle.height / 2 +
-      labelRectangle.height / 2}px`;
+    if (options.display === 'absolute') {
+      newIcon.style.top = `${labelRectangle.top -
+        iconRectangle.height / 2 +
+        labelRectangle.height / 2 +
+        window.scrollY}px`;
 
-    newIcon.style.left = `${(labelRectangle.right - iconRectangle.width / 2) *
-      percent}px`;
+      newIcon.style.left = `${(labelRectangle.right - iconRectangle.width / 2) *
+        percent +
+        window.scrollX}px`;
 
-    newIcon.style.position = 'absolute';
-    newIcon.style.display = 'table';
+      newIcon.style.position = 'absolute';
+      newIcon.style.display = 'table';
+    } else {
+      const label = element.parentElement;
+      label.appendChild(newIcon);
+      label.style.position = 'relative';
+      newIcon.style.display = 'table';
+      newIcon.style.position = 'absolute';
+      newIcon.style.top = options.positionY;
+      newIcon.style.right = options.positionX;
+    }
 
     if (options.time) {
       setTimeout(() => {
@@ -45,6 +63,7 @@ function createAlert(elements, options) {
       }, options.time);
     }
   }
-}
+};
 
 export { createAlert };
+
