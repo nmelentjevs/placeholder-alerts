@@ -3,7 +3,7 @@
 > Small package to add font-awesome icon alerts inside the placeholder to show incorrect input on form validation.
 > Needs Font Awesome to be supplied for it to display correctly.
 
-> [![npm (scoped)](https://img.shields.io/badge/npm-v1.1.0-brightgreen.svg)](https://github.com/nmelentjevs/placeholder-alerts) ![npm (scoped)](https://img.shields.io/badge/install_size-1.3Kb-green.svg) ![npm (scoped)](https://img.shields.io/badge/build-passing-brightgreen.svg)
+> [![npm (scoped)](https://img.shields.io/badge/npm-v1.2.0-brightgreen.svg)](https://github.com/nmelentjevs/placeholder-alerts) ![npm (scoped)](https://img.shields.io/badge/install_size-1.3Kb-green.svg) ![npm (scoped)](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
 ## Install
 
@@ -33,7 +33,7 @@ Choose an input box where you would like to show side alert:
 </form>
 ```
 
-#### Javascript
+####Javascript
 
 ```js
 const email = document.getElementById('email');
@@ -53,7 +53,7 @@ createAlert(email);
     Options parameter should be an object of options:
 
     Options
-        none             Alert will be shown with default bell icon
+        none             Alert will be shown with default bell icon. Font size - 14px, color - red.
 
         iconClasses      String. Supply font-awesome icon classes to display an icon of your choice.
 
@@ -61,6 +61,12 @@ createAlert(email);
                          Default: icons will stay on the page.
 
         style            Object. CSS Object containing any styled to be applied to the icon.
+
+        display         String. Default: 'absolute' - great if you want to set time to hide the
+                        icon after some x seconds. 'relative' - if you want to control where the
+                        icon is placed relative to parent where the form input is located.
+
+        percent         Int. Used with display: 'absolute' to control % placement of input width.
 
 ```
 
@@ -83,6 +89,32 @@ createAlert(email, {
 ![Remove after delay](https://media.giphy.com/media/JRt20Sr20J7CWDBIkP/giphy.gif)
 
 ## Form Validation Example
+
+#### Html
+
+```html
+<form id="form">
+  <label>
+    Email
+    <input id="email" type="text" placeholder="Your email address" />
+  </label>
+  <label>
+    Phone number
+    <input id="phone" type="text" placeholder="Your mobile number" />
+  </label>
+  <label>
+    Password
+    <input id="password" type="password" placeholder="At least 4 characters" />
+  </label>
+  <label id="error">
+    <span> </span>
+  </label>
+  <div>
+    <button id="send-button" type="submit">Send</button>
+    <button id="reset-button" type="submit">Reset</button>
+  </div>
+</form>
+```
 
 #### Javascript
 
@@ -122,47 +154,6 @@ createAlert(email, {
 };
 ```
 
-#### Html
-
-```html
-<form id="form">
-  <label>
-    Email
-    <input
-      id="email"
-      class="inputRequest formContentElement"
-      type="text"
-      placeholder="Your email address"
-    />
-  </label>
-  <label>
-    Phone number
-    <input
-      id="phone"
-      class="inputRequest formContentElement"
-      type="text"
-      placeholder="Your mobile number"
-    />
-  </label>
-  <label>
-    Password
-    <input
-      id="password"
-      class="inputRequest formContentElement alert"
-      type="password"
-      placeholder="At least 4 characters"
-    />
-  </label>
-  <label id="error">
-    <span> </span>
-  </label>
-  <div>
-    <button id="send-button" type="submit">Send</button>
-    <button id="reset-button" type="submit">Reset</button>
-  </div>
-</form>
-```
-
 ##### If submitted without filling the fields validation will trigger alert on all inputs:
 
 ![More complex example](https://media.giphy.com/media/IgjxZ0zXOancEUig0A/giphy.gif)
@@ -177,4 +168,3 @@ createAlert(email, {
 [travis-url]: https://travis-ci.org/live-js/live-xxx
 [coveralls-image]: https://img.shields.io/coveralls/live-js/live-xxx/master.svg
 [coveralls-url]: https://coveralls.io/r/live-js/live-xxx?branch=master
-
