@@ -42,7 +42,7 @@ createAlert(email);
 ```
 
 ##### Will display this:
-###### The icon is on the DOM forever as theree is no callback to remove it after x seconds supplied to options
+###### The icon will stay on the DOM forever as theree is no callback to remove it after x seconds supplied to options
 
 ![Alert icon](https://i.ibb.co/prFtbD5/Screen-Shot-2019-06-10-at-20-23-06-pm.png)
 
