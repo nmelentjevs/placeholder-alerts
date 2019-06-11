@@ -54,6 +54,7 @@ createAlert(email);
 ```
 
 ##### Will display this:
+
 ###### The icon will stay on the DOM forever as theree is no callback to remove it after x seconds supplied to options
 
 ![Alert icon](https://i.ibb.co/prFtbD5/Screen-Shot-2019-06-10-at-20-23-06-pm.png)
@@ -62,26 +63,37 @@ createAlert(email);
 
 ```
 
-  Usage
-    createAlert(target, options)
+Usage
+  createAlert(target, options)
 
-    Options parameter should be an object of options:
+  Options parameter should be an object of options:
 
-    Options
-        none             Alert will be shown with default bell icon. Font size - 14px, color - red.
+  Options
+    none            Alert will be shown with default bell icon.
+                    Font size - 14px, color - red.
 
-        iconClasses      String. Supply font-awesome icon classes to display an icon of your choice.
+    iconClasses     String. Supply font-awesome icon classes to
+                    display an icon of your choice.
 
-        time             Int. Time in ms after which the alert icon will dissapear from the page.
-                         Default: icons will stay on the page.
+    time            Int. Time in ms after which the alert icon will
+                    dissapear from the page. Default: icons will stay
+                    on the page.
 
-        style            Object. CSS Object containing any styled to be applied to the icon.
+    style           Object. CSS Object containing any styled to be
+                    applied to the icon.
 
-        display         String. Default: 'absolute' - great if you want to set time to hide the
-                        icon after some x seconds. 'relative' - if you want to control where the
-                        icon is placed relative to parent where the form input is located.
+    display         String. Default: 'absolute' - great if you want
+                    to set time to hide the icon after some x seconds.
+                    'relative' - if you want to control where the icon
+                    is placed relative to parent where the form input
+                    is located.
 
-        percent         Int. Used with display: 'absolute' to control % placement of input width.
+    percent         Int. Used with display: 'absolute' to control %
+                    placement of input width.
+
+    positionY,      String. Used with  display: 'relative' to place icon
+    positionX       exactly where you want it to be relative to label.
+                    Provide px or em or rem values. (ex: '10px')
 
 ```
 
@@ -183,3 +195,4 @@ createAlert(email, {
 [travis-url]: https://travis-ci.org/live-js/live-xxx
 [coveralls-image]: https://img.shields.io/coveralls/live-js/live-xxx/master.svg
 [coveralls-url]: https://coveralls.io/r/live-js/live-xxx?branch=master
+
